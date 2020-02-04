@@ -1,0 +1,104 @@
+<?php include 'db.php'; ?>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #696969;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+
+input[type=text], input[type=password],input[type=varchar],
+input[type=date],input[type=int]
+ {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus,input[type=text]:focus, input[type=password]:focus input[type=varchar]:focus,input[type=date]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="button" style="width:30%">
+  <button class="w3-button w3-block w3-black"><a href="index.php">Pagina Principala</a> </button>
+</div>
+
+    <h1>Programare</h1>
+    <p>Va rog completati datele </p>
+    <hr>
+      <div id="content">
+        <!-- insert the page content here -->
+        <form method="post" action="programare2.php">
+	<h2>Email</h2>
+		<input type="text" placeholder="Introduceti Email-u" name="email">
+	<h2>Nume</h2>
+		<input type="text" placeholder="Introduceti numele complet" name="name">
+	<h2>Telefon</h2>
+		<input type="int" placeholder="Introduceti numarul de telefon" name="telefon">
+	<h2>ID Mester</h2>
+		<input type="int" placeholder="Introduceti id-ul mesterului la care doriti sa fiti programat" name="mester">
+	<h2>Data</h2>
+		<input type="date"  name="date">
+		<button type="submit" class="registerbtn">Programare</button>
+</form>
+	</div>
+        
+      </div>
+    </div>
+  
+
+</body>
+</html>

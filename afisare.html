@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+
+  body{
+    background-color: #696969; 
+	text-align:center;
+   } 
+
+
+</style>
+</head>
+<body>
+
+<div class="button" style="width:30%">
+  <button class="w3-button w3-block w3-black"><a href="index.php">Pagina Principala</a> </button>
+</div>
+<div class="button" style="width:30%">
+  <button class="w3-button w3-block w3-black"><a href="stergere.php">Stergere programarii</a> </button>
+</div>
+<div class="button" style="width:30%">
+  <button class="w3-button w3-block w3-black"><a href="modificare.php">Modificare programarii</a> </button>
+</div>
+   
+   
+   
+   <div id="content">
+        <!-- insert the page content here -->
+       <div class="container"> 
+	
+
+<?php  
+
+include 'db.php';
+
+$sql = "SELECT *FROM `programare`";
+
+$result = $connection -> query($sql);
+
+if($result->num_rows > 0){
+	while($row = $result->fetch_assoc()){
+	echo 
+	'<table>'.
+		'<tr>'.
+			'<th>' . 'id client' . 							'</th>'.
+			'<th>' .  $row['id']  . 					'</th>'.
+		'</tr>'.
+		'<tr>'.
+			'<th>' . 'Email'. 							'</th>'	.
+			'<th>' .  $row['email']   .			 '</th>'.
+		'</tr>'.
+		'<tr>'.
+			'<th>' . 'Nume' .						 '</th>'.
+			'<th>' .  $row['name']  .						 '</th>'.
+		'</tr>'.
+		'<tr>'.
+			'<th>' . 'Telefon' . 						'</th>'.
+			'<th>' .  $row['telefon']  . 						'</th>'.
+		'</tr>'.
+		'<tr>'.
+			'<th>' . 'id mester' . 							'</th>'.
+			'<th>' .  $row['id_m']  . 							'</th>'.
+		'</tr>'.
+		'<tr>'.
+			'<th>' . 'Data' . 							'</th>'.
+			'<th>' .  $row['date']  . 							'</th>'.
+		'</tr>'.
+		'<tr>'.
+
+	"<br>"
+	;
+	}
+}else{
+	echo 'o rezultate';
+}
+
+?>
+</div>>
+	</div>
+        
+      </div>
+    </div>
+   
+</body>
+</html> 
